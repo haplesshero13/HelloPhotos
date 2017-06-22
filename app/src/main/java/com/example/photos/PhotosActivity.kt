@@ -25,8 +25,7 @@ class PhotosActivity : Activity() {
         } else if (checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE)
             == PackageManager.PERMISSION_GRANTED) {
             val images = getCameraImages(applicationContext)
-            Log.i("YO", "Found images:")
-            Log.i("YO", images.size.toString())
+            Log.i("YO", "Found images: ${images.size}")
         }
     }
 
@@ -40,8 +39,7 @@ class PhotosActivity : Activity() {
             if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 val images = getCameraImages(applicationContext)
 
-                Log.i("YO", "Found images:")
-                Log.i("YO", images.size.toString())
+                Log.i("YO", "Found images: ${images.size}")
             } else {
                 Log.i("YO", "No permissions :(")
             }
